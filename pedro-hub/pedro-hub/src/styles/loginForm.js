@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledLoginForm = styled.section`
-  background-color: var(--color-grey-3);
+  background-color: var(--color-grey-4);
   display: flex;
   flex-direction: column;
   width: 40%;

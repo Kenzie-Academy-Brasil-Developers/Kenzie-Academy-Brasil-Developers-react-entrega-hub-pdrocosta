@@ -74,6 +74,8 @@ const StyledHome = styled.main`
     }
     p{
         color: var(--color-grey-1);
+     display: flex;
+    justify-content: center;
     }
   }
 `;
