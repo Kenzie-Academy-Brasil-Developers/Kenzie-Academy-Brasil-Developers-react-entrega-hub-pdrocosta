@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "../Input/input";
 import { registerFormSchema } from "./registerFormSchema";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import StyledRegisterForm from "../../styles/registerForm";
 
 const FormInputs = ({ registerUser }) => {
@@ -15,11 +15,13 @@ const FormInputs = ({ registerUser }) => {
   } = useForm({
     resolver: yupResolver(registerFormSchema),
   });
+  const navigate = useNavigate()
 
   const inputs = (formInput) => {
     registerUser(formInput);
     console.log(formInput);
     reset();
+    navigate("/")
   };
   return (
     <StyledRegisterForm>
@@ -75,9 +77,9 @@ const FormInputs = ({ registerUser }) => {
           <option value="Second module">Second module</option>
           <option value="Third module">Third module</option>
         </select>
-        <Link to="/">
+       
           <button id="btn_register">Register</button>
-        </Link>
+       
       </form>
     </StyledRegisterForm>
   );

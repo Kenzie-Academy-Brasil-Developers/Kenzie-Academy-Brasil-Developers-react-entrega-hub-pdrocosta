@@ -11,13 +11,11 @@ const StyledLoginForm = styled.section`
   align-items: center;
   justify-items: center;
   align-content: center;
-border: none;
-border-radius: 3px;
+  border: none;
+  border-radius: 3px;
   max-width: 500px;
 
   p {
-
-   
     height: 30%;
     display: flex;
     justify-content: center;
@@ -51,9 +49,9 @@ border-radius: 3px;
   }
   fieldset {
     border: none;
-   input{
-    padding: 2%;
-   }
+    input {
+      padding: 2%;
+    }
   }
   .div_Cadastro {
     flex-direction: column;
