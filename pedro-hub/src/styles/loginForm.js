@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledLoginForm = styled.section`
-  background-color: var(--color-grey-4);
+  background-color: var(--color-grey-3);
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -51,6 +51,8 @@ const StyledLoginForm = styled.section`
     border: none;
     input {
       padding: 2%;
+      width: 95%;
+      color: var(--color-grey-1);
     }
   }
   .div_Cadastro {
@@ -88,5 +90,16 @@ const StyledLoginForm = styled.section`
     margin-bottom: 5%;
     width: 100%;
   }
+  @media (max-width: 900px) {
+    width: 90%;
+    p{
+      margin: 7%;
+      font-size: 10px;
+    }
+    .btn_submit {
+      margin-top: 5%;
+    }
+  }
+
 `;
 export default StyledLoginForm;

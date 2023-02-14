@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import Header from "../../components/Header/header";
-import StyledHome from "./styleHome";
+import StyledHome from "../../styles/styleHome";
+
 
 const Dashboard = ({ getUser, user, userLogout }) => {
-  const navigate = useNavigate;
+
   useEffect(() => {
     getUser(localStorage.getItem("@USERID:"));
   }, []);
@@ -17,7 +17,7 @@ const Dashboard = ({ getUser, user, userLogout }) => {
 
           <StyledHome>
             <div className="div_userInfos">
-              <p className="p_user">Ola, {user.name}</p>
+              <p className="p_user">Hello, {user.name}.</p>
               <p className="p_course"> {user.course_module}</p>
             </div>
             <div className="div_mainteance">

@@ -14,41 +14,39 @@ const AppRoutes = () => {
   const registerUser = async (formInput) => {
     try {
       const response = await api.post("/users", formInput);
-      console.log(response.data);
-      navigate("/")
+
+      navigate("/");
     } catch (error) {
-      console.log(error, response);
+      alert(error);
     }
   };
 
   const loginUser = async (formInput1) => {
-    console.log(formInput1);
     try {
       const response = await api.post("/sessions", formInput1);
-      console.log(response.data);
       localStorage.setItem(`@Token:`, response.data.token);
       localStorage.setItem(`@USERID:`, response.data.user.id);
-
       setUserData(response.data.user.id);
-      navigate("/Home")
-    } catch (error) {}
+      navigate("/Home");
+    } catch (error) {
+      alert(error);
+    }
   };
 
   async function getUser() {
     try {
       const response = await api.get(`/users/${userData}`);
-      console.log(response.data);
       setUser(response.data);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
   async function userLogout() {
     localStorage.removeItem(`@USERID:`);
     localStorage.removeItem(`@Token:`);
-    setUserData([])
-    navigate("/")
-  } 
+    setUserData([]);
+    navigate("/");
+  }
   return (
     <Routes>
       <Route
@@ -62,7 +60,12 @@ const AppRoutes = () => {
       <Route
         path="/Home"
         element={
-          <Dashboard getUser={getUser} userLogout={userLogout} userData={userData} user={user} />
+          <Dashboard
+            getUser={getUser}
+            userLogout={userLogout}
+            userData={userData}
+            user={user}
+          />
         }
       />
       <Route path="*" element={<h1>Pagina nao encontrada </h1>} />

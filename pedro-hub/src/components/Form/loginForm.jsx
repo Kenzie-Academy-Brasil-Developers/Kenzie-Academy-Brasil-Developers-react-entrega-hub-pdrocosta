@@ -2,9 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-
 import StyledLoginForm from "../../styles/loginForm";
-import Header from "../Header/header";
 import Input from "../Input/input";
 import { loginFormSchema } from "./loginFormSchema";
 
@@ -20,7 +18,6 @@ const LoginFormInputs = ({ loginUser }) => {
 
   const loginInputs = (loginformInput) => {
     loginUser(loginformInput);
-    console.log(loginformInput);
     reset();
   };
   return (

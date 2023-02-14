@@ -1,6 +1,6 @@
 import FormInputs from "../../components/Form/registerForm";
 import Header from "../../components/Header/header";
-import StyledRegisterPage from "./styleRegister";
+import StyledRegisterPage from "../../styles/styleRegister";
 
 const Register = ({ registerUser }) => {
   return (

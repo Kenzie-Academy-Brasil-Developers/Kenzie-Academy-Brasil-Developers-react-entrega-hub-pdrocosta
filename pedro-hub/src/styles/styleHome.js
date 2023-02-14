@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHome = styled.main`
-  background-color: var(--color-grey-3);
+  background-color: var(--color-grey-4);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -15,7 +15,7 @@ const StyledHome = styled.main`
   border-radius: 3px;
   max-width: none;
 
-.div_userInfos{
+  .div_userInfos {
     height: 10%;
     display: flex;
     flex-direction: row;
@@ -25,9 +25,8 @@ const StyledHome = styled.main`
     border-bottom: 3px solid var(--color-grey-2);
     margin-bottom: 5%;
     border-top: 2px solid var(--color-grey-2);
-}
-.p_user
-  {
+  }
+  .p_user {
     height: 30%;
     display: flex;
     justify-content: center;
@@ -38,10 +37,9 @@ const StyledHome = styled.main`
     margin: 0px;
     width: auto;
     color: var(--color-grey-0);
-    margin:5%;
-   
+    margin: 10%;
   }
-  .p_course{
+  .p_course {
     height: 30%;
     display: flex;
     justify-content: center;
@@ -52,30 +50,35 @@ const StyledHome = styled.main`
     margin: 0px;
     width: auto;
     color: var(--color-grey-1);
-    margin:5%;
+    margin: 5%;
   }
-  h3{
-
+  h3 {
   }
-  .div_mainteance{
+  .div_mainteance {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 80%;
     align-content: center;
-    h3{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        height: 5%;
-        color: var(--color-grey-1);
+    h3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 5%;
+      color: var(--color-grey-1);
     }
-    p{
-        color: var(--color-grey-1);
-     display: flex;
-    justify-content: center;
+    p {
+      color: var(--color-grey-1);
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 900px) {
+    border: none;
+    .div_mainteance {
+      display: none;
     }
   }
 `;

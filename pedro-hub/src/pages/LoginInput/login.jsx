@@ -1,6 +1,7 @@
 import LoginFormInputs from "../../components/Form/loginForm";
 import Header from "../../components/Header/header";
-import StyledMain from "./loginStyled";
+import StyledMain from "../../styles/loginStyled";
+
 
 const Login = ({ loginUser, getUser}) => {
   return (

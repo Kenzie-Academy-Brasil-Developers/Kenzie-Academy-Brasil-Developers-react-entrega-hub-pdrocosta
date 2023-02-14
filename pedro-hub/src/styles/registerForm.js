@@ -70,12 +70,14 @@ const StyledRegisterForm = styled.section`
     width: 100%;
     background-color: var(--color-primary-Negative);
     padding: 1%;
-    height: 100%;
+
     border-radius: 6px;
     color: var(--color-grey-0);
     font-weight: 800;
     margin-bottom: 12%;
-  
+    margin: 10%;
+    height: 200px;
+
     display: flex;
     align-items: center;
     align-content: center;
@@ -93,6 +95,15 @@ const StyledRegisterForm = styled.section`
   a {
     height: 5%;
     margin: 9%;
+  }
+  @media (max-width: 900px) {
+    width: 90%;
+    form {
+      height: 100vh;
+    }
+    #btn_register {
+      height: 100px;
+    }
   }
 `;
 export default StyledRegisterForm;
