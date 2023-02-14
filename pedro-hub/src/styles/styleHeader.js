@@ -40,6 +40,10 @@ const StyledHeader = styled.header`
       margin: 3%;
       width: 40%;
     }
+    h2{
+      justify-content: flex-start;
+      margin: 5%;
+    }
     
   }
 `;

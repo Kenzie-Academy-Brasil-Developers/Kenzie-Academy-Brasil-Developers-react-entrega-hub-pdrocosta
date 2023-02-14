@@ -77,8 +77,17 @@ const StyledHome = styled.main`
   }
   @media (max-width: 900px) {
     border: none;
+    justify-content: flex-start;
     .div_mainteance {
       display: none;
+    }
+    .div_userInfos{
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .p_user{
+      margin: 5%;
     }
   }
 `;
