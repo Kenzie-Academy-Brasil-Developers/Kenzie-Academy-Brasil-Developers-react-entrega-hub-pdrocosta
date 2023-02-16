@@ -1,29 +1,41 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "../../components/Header/header";
+import TechList from "../../components/TechList/techList";
+import { HomeContext } from "../../providers/homeContext";
 import StyledHome from "../../styles/styleHome";
+import TechModal from "../../components/Modal/techModal";
+import { TechContext } from "../../providers/techContext";
 
 
-const Dashboard = ({ getUser, user, userLogout }) => {
+const Dashboard = ({}) => {
+  const { getUser, userLogout, userInfos } = useContext(HomeContext);
+  const { showModal3, openModal } = useContext(TechContext);
+
 
   useEffect(() => {
-    getUser(localStorage.getItem("@USERID:"));
+    getUser();
   }, []);
 
   return (
     <>
-      {user ? (
+      {userInfos ? (
         <>
           <Header trueButton={true} text="Logout" userLogout={userLogout} />
 
           <StyledHome>
             <div className="div_userInfos">
-              <p className="p_user">Hello, {user.name}.</p>
-              <p className="p_course"> {user.course_module}</p>
+              <p className="p_user">Hello, {userInfos.name}.</p>
+              <p className="p_course"> {userInfos.course_module}</p>
             </div>
-            <div className="div_mainteance">
-              <h3>I`m sorry, we`re currently in maintenance. `</h3>
-              <p>Our application is in development. We`ll soon have news. `</p>
+            <div className="div_headerList">
+              <h2>Tecnologias</h2>
+              <button onClick={()=>openModal()} className="btn_add_tech">
+                +
+              </button>
             </div>
+         
+            <TechList/>
+            <TechModal/>
           </StyledHome>
         </>
       ) : (

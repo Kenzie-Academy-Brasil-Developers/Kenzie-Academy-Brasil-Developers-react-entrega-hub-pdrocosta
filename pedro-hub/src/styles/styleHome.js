@@ -14,6 +14,11 @@ const StyledHome = styled.main`
   border: none;
   border-radius: 3px;
   max-width: none;
+  .div_headerList{
+    height: 5%;
+    display: flex;
+    align-items: center;
+  }
 
   .div_userInfos {
     height: 10%;
@@ -23,8 +28,9 @@ const StyledHome = styled.main`
     align-items: center;
     justify-content: space-between;
     border-bottom: 3px solid var(--color-grey-2);
-    margin-bottom: 5%;
+    margin-bottom: 0px;
     border-top: 2px solid var(--color-grey-2);
+
   }
   .p_user {
     height: 30%;
@@ -81,11 +87,7 @@ const StyledHome = styled.main`
     .div_mainteance {
       display: none;
     }
-    .div_userInfos{
-      height: auto;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  
     .p_user{
       margin: 5%;
     }

@@ -1,25 +1,25 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../Input/input";
 import { registerFormSchema } from "./registerFormSchema";
-import { useNavigate } from "react-router-dom";
 import StyledRegisterForm from "../../styles/registerForm";
+import { RegisterContext } from "../../providers/registerContext";
+import { useNavigate } from "react-router";
 
-const FormInputs = ({ registerUser }) => {
+const FormInputs = ({}) => {
+  const { registerUser } = useContext(RegisterContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(registerFormSchema),
   });
-  const navigate = useNavigate();
-
   const inputs = (formInput) => {
+    console.log(inputs, formInput)
     registerUser(formInput);
-    reset();
     navigate("/");
   };
   return (
