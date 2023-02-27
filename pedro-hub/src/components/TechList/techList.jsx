@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { HomeContext } from "../../providers/homeContext";
+import { TechContext } from "../../providers/techContext";
 import StyledTechList from "../../styles/styleTechList";
 import CardTech from "../Card/cardTech";
 
 const TechList = () => {
-  const { userInfos } = useContext(HomeContext);
+  const { userInfos } = useContext(TechContext);
   console.log(userInfos);
   return (
     <StyledTechList>

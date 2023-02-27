@@ -1,18 +1,12 @@
 import React from "react";
-import HomeProvider from "./homeContext";
-import LoginProvider from "./loginContext";
-import RegisterProvider from "./registerContext";
 import TechProvider from "./techContext";
+import UserProvider from "./userContext";
 
 const Providers = ({ children }) => {
   return (
-    <RegisterProvider>
-      <LoginProvider>
-        <HomeProvider>
-          <TechProvider>{children}</TechProvider>
-        </HomeProvider>
-      </LoginProvider>
-    </RegisterProvider>
+    <UserProvider>
+      <TechProvider>{children}</TechProvider>
+    </UserProvider>
   );
 };
 

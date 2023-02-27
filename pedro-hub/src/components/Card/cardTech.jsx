@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { HomeContext } from "../../providers/homeContext";
 import { TechContext } from "../../providers/techContext";
 import StyledCardTech from "../../styles/styleCardTech";
 

@@ -1,10 +1,10 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
-export const LoginContext = createContext({});
+export const UserContext = createContext({});
 
-export const LoginProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
   const loginUser = async (formInput1) => {
@@ -19,10 +19,20 @@ export const LoginProvider = ({ children }) => {
       alert(error);
     }
   };
+  const registerUser = async (formInputs) => {
+    try {
+      const response = await api.post("/users", formInputs);
+      navigate("/");
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
-    <LoginContext.Provider value={{ loginUser, userData, setUserData }}>
+    <UserContext.Provider
+      value={{ loginUser, userData, setUserData, registerUser }}
+    >
       {children}
-    </LoginContext.Provider>
+    </UserContext.Provider>
   );
 };
-export default LoginProvider;
+export default UserProvider;

@@ -7,7 +7,7 @@ const StyledHome = styled.main`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   justify-items: center;
   align-content: center;
@@ -18,6 +18,27 @@ const StyledHome = styled.main`
     height: 5%;
     display: flex;
     align-items: center;
+    h2{
+      color: var(--color-grey-1);
+      margin-left: 10%;
+      margin-top: 5%;
+    }
+  }
+  .btn_add_tech{
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 5%;
+    height: 80%;
+    background-color: var(--color-grey-3);
+    color: var(--color-grey-1);
+    font-size: 1.1rem;
+    align-self: center;
+    display: flex;
+    border: none;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
   }
 
   .div_userInfos {

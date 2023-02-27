@@ -21,19 +21,32 @@ const TechModal = () => {
 
   const techInputs = (techformInput) => {
     createTech(techformInput);
+    console.log("botao apertado")
     reset();
   };
 
+  const onSubmit = (data) => {
+    if (Object.keys(errors).length === 0) {
+      techInputs(data);
+    } else {
+      console.log("Form validation errors: ", errors);
+    }
+  };
+
+  function confirm(){
+  
+    console.log("confirmed")
+  }
   return (
     <>
       {stateModal && (
         <StyledModal>
           <section>
           <div>
-            <p>Register Tech</p>
-            <button onClick={() => setStateModal(false)}>X</button>
+            <p className="p_register_tech">Register Tech</p>
+            <button className="btn_closemodal" onClick={() => setStateModal(false)}>X</button>
           </div>
-          <form onSubmit={handleSubmit(techInputs)}>
+          <form onSubmit={(e)=> {e.preventDefault(); handleSubmit(techInputs); confirm()}}>
             <Input
               type="text"
               placeholder="Type your tech"
@@ -41,13 +54,13 @@ const TechModal = () => {
               error={errors.title}
               register={register("title")}
             />
-            <p>Choose Status</p>
+            <p className="p_choose">Choose Status</p>
             <select name="select_tech" id="select_tech" {...register("status")}>
               <option value="Iniciante">Iniciante</option>
               <option value="Intermediário">Intermediario</option>
               <option value="Avançado">Avancado</option>
             </select>
-            <button type="submit" >Register Tech</button>
+            <button className="btn_submit" type="submit" >Register Tech</button>
           </form>
           </section>
         </StyledModal>

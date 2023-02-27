@@ -1,19 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import Header from "../../components/Header/header";
 import TechList from "../../components/TechList/techList";
-import { HomeContext } from "../../providers/homeContext";
 import StyledHome from "../../styles/styleHome";
 import TechModal from "../../components/Modal/techModal";
 import { TechContext } from "../../providers/techContext";
+import { UserContext } from "../../providers/userContext";
 
 
 const Dashboard = ({}) => {
-  const { getUser, userLogout, userInfos } = useContext(HomeContext);
-  const { showModal3, openModal } = useContext(TechContext);
+  const { showModal3, openModal,  getUser1,  userInfos, userLogout } = useContext(TechContext);
 
 
-  useEffect(() => {
-    getUser();
+ useEffect(() => {
+    getUser1();
   }, []);
 
   return (

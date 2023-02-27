@@ -4,7 +4,7 @@ const StyledCardTech = styled.li`
   border-radius: 5px;
   width: 90%;
   display: flex;
-  height: 10%;
+  height: 15%;
   flex-direction: row;
   justify-content: space-between;
   background-color: var(--color-grey-4);
@@ -12,7 +12,7 @@ const StyledCardTech = styled.li`
   padding: 2%;
   margin-left: 10%;
   margin-right: 10%;
-  align-items: baseline;
+  align-items: center;
   #p_title {
     height: auto;
     width: 20%;
@@ -24,8 +24,10 @@ const StyledCardTech = styled.li`
     
   }
   button{
-    width: 5%;
+    width: 20%;
     background-color: var(--color-grey-2);
+    border: none;
+    columns: var(--color-grey-1);
   }
 `;
 

@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import Input from "../Input/input";
 import { registerFormSchema } from "./registerFormSchema";
 import StyledRegisterForm from "../../styles/registerForm";
-import { RegisterContext } from "../../providers/registerContext";
 import { useNavigate } from "react-router";
+import { UserContext } from "../../providers/userContext";
 
 const FormInputs = ({}) => {
-  const { registerUser } = useContext(RegisterContext);
+  const { registerUser } = useContext(UserContext);
   const navigate = useNavigate();
   const {
     register,

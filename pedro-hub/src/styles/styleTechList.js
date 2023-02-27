@@ -14,6 +14,7 @@ flex-direction: column;
 align-items: center;
 gap: 5%;
 overflow-y: auto;
+overflow-x: hidden;
 
 `;
 export default StyledTechList;
