@@ -8,7 +8,7 @@ export const TechProvider = ({ children }) => {
   const [stateModal, setStateModal] = useState(false);
   const [userInfos, setUserInfos] = useState(null);
   const navigate = useNavigate();
-  const [ userData, setUserData ] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   const openModal = () => {
     console.log("apertado");
@@ -18,11 +18,14 @@ export const TechProvider = ({ children }) => {
 
   const createTech = async (techformInput) => {
     try {
-      const response = await api.post("/users/techs/", techformInput, {
+      await api.post("/users/techs/", techformInput, {
+        headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
+      });
+      const response = await api.get("/users/", {
         headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
       });
       console.log("Tech created:", response.data);
-      setUserInfos([...userInfos, response.data]);
+      setUserInfos(response.data.techs);
     } catch (error) {
       console.error("Error creating tech:", error);
       alert(error);
@@ -31,12 +34,12 @@ export const TechProvider = ({ children }) => {
 
   const deleteTech = async (techID) => {
     try {
-      const response = await api.delete(`/users/techs/${techID}`, {
+      await api.delete(`/users/techs/${techID}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
       });
-      //toast("Confirmed");
-      console.log("confirmed");
-      setUserInfos(userInfos.filter((infos) => infos.id != techID));
+      if (Array.isArray(userInfos)) {
+        setUserInfos(userInfos.filter((infos) => infos.id != techID));
+      }
     } catch (error) {
       alert(error);
     }
@@ -80,10 +83,8 @@ export const TechProvider = ({ children }) => {
   return (
     <TechContext.Provider
       value={{
-        createTech,
         openModal,
-        setStateModal,
-        stateModal,
+        createTech,
         deleteTech,
         userLogout,
         getUser1,
@@ -91,6 +92,8 @@ export const TechProvider = ({ children }) => {
         setUserData,
         userInfos,
         setUserInfos,
+        stateModal,
+        setStateModal,
       }}
     >
       {children}

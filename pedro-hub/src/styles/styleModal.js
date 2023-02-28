@@ -100,6 +100,9 @@ const StyledModal = styled.section`
     border: none;
     z-index: 99;
   }
+  @media (max-width: 900px) {
+    width: 80%;
+  }
 `;
 
 export default StyledModal;
