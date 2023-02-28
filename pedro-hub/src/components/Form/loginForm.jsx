@@ -7,7 +7,6 @@ import StyledLoginForm from "../../styles/loginForm";
 import Input from "../Input/input";
 import { loginFormSchema } from "./loginFormSchema";
 
-
 const LoginFormInputs = ({}) => {
   const { loginUser } = useContext(UserContext);
   const {

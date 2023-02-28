@@ -9,18 +9,14 @@ const TechList = () => {
 
   return (
     <StyledTechList>
-      {useEffect(() => {
-        userInfos.techs.map((tech) => {
-          return (
-            <CardTech
-              key={tech.id}
-              title={tech.title}
-              id={tech.id}
-              status={tech.status}
-            />
-          );
-        });
-      })}
+      {userInfos.techs.map((tech) => (
+        <CardTech
+          key={tech.id}
+          title={tech.title}
+          id={tech.id}
+          status={tech.status}
+        />
+      ))}
     </StyledTechList>
   );
 };

@@ -19,7 +19,7 @@ const StyledInput = styled.fieldset`
     background-color: var(--color-grey-2);
     width: 95%;
   }
-  input:hover{
+  input:hover {
     border: 2px solid white;
     color: var(--color-grey-1);
   }

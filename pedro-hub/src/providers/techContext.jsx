@@ -21,11 +21,17 @@ export const TechProvider = ({ children }) => {
       await api.post("/users/techs/", techformInput, {
         headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
       });
-      const response = await api.get("/users/", {
-        headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
-      });
-      console.log("Tech created:", response.data);
-      setUserInfos(response.data.techs);
+      const response = await api.get(
+        `/users/${localStorage.getItem(`@USERID:`)}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem(`@Token:`)}`,
+          },
+        }
+      );
+    
+      setUserInfos(response.data);
+      setStateModal(false);
     } catch (error) {
       console.error("Error creating tech:", error);
       alert(error);
@@ -37,9 +43,16 @@ export const TechProvider = ({ children }) => {
       await api.delete(`/users/techs/${techID}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem(`@Token:`)}` },
       });
-      if (Array.isArray(userInfos)) {
-        setUserInfos(userInfos.filter((infos) => infos.id != techID));
-      }
+      const response = await api.get(
+        `/users/${localStorage.getItem(`@USERID:`)}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem(`@Token:`)}`,
+          },
+        }
+      );
+ 
+      setUserInfos(response.data);
     } catch (error) {
       alert(error);
     }
@@ -73,12 +86,12 @@ export const TechProvider = ({ children }) => {
         console.log(userInfos, userData);
       } catch (error) {
         alert("Faca login");
-
         localStorage.clear();
         navigate("/");
       }
     }
   });
+  useEffect(() => {}, [userInfos]);
 
   return (
     <TechContext.Provider

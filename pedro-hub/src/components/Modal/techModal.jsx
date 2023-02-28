@@ -32,7 +32,8 @@ const TechModal = () => {
           <section>
             <div>
               <p className="p_register_tech">Register Tech</p>
-              <button type="button"
+              <button
+                type="button"
                 className="btn_closemodal"
                 onClick={() => setStateModal(false)}
               >
@@ -58,7 +59,7 @@ const TechModal = () => {
                 <option value="Intermediário">Intermediario</option>
                 <option value="Avançado">Avancado</option>
               </select>
-              <button onSubmit={handleSubmit(techInputs)} className="btn_submit" type="submit">
+              <button className="btn_submit" type="submit">
                 Register Tech
               </button>
             </form>

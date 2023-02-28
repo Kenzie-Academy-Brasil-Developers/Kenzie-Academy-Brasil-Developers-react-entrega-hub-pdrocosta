@@ -92,7 +92,7 @@ const StyledLoginForm = styled.section`
   }
   @media (max-width: 900px) {
     width: 90%;
-    p{
+    p {
       margin: 7%;
       font-size: 10px;
     }
@@ -100,6 +100,5 @@ const StyledLoginForm = styled.section`
       margin-top: 5%;
     }
   }
-
 `;
 export default StyledLoginForm;

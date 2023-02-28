@@ -9,7 +9,6 @@ const StyledMain = styled.main`
   flex-direction: column;
   @media (max-width: 900px) {
     justify-content: flex-start;
-    
   }
 `;
 

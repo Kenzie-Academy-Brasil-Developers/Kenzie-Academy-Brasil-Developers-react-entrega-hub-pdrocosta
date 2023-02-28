@@ -2,10 +2,7 @@ import * as yup from "yup";
 
 export const registerFormSchema = yup.object().shape({
   name: yup.string().required("Name field is empty."),
-  email: yup
-    .string()
-    .required("Email is required.")
-    .email("Email is invalid."),
+  email: yup.string().required("Email is required.").email("Email is invalid."),
   password: yup
     .string()
     .required("Password is required.")
@@ -18,5 +15,8 @@ export const registerFormSchema = yup.object().shape({
     .string()
     .required("The confirmed password field is empty.")
     .oneOf([yup.ref("password")], "The passwords don`t match."),
-    bio: yup.string().required("Bio is empty").max(256, "Bio must have a maximum of 256 characters.")
+  bio: yup
+    .string()
+    .required("Bio is empty")
+    .max(256, "Bio must have a maximum of 256 characters."),
 });

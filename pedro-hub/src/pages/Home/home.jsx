@@ -6,12 +6,11 @@ import TechModal from "../../components/Modal/techModal";
 import { TechContext } from "../../providers/techContext";
 import { UserContext } from "../../providers/userContext";
 
-
 const Dashboard = ({}) => {
-  const { showModal3, openModal,  getUser1,  userInfos, userLogout } = useContext(TechContext);
+  const { showModal3, openModal, getUser1, userInfos, userLogout } =
+    useContext(TechContext);
 
-
- useEffect(() => {
+  useEffect(() => {
     getUser1();
   }, []);
 
@@ -28,13 +27,13 @@ const Dashboard = ({}) => {
             </div>
             <div className="div_headerList">
               <h2>Tecnologias</h2>
-              <button onClick={()=>openModal()} className="btn_add_tech">
+              <button onClick={() => openModal()} className="btn_add_tech">
                 +
               </button>
             </div>
-         
-            <TechList/>
-            <TechModal/>
+
+            <TechList />
+            <TechModal />
           </StyledHome>
         </>
       ) : (

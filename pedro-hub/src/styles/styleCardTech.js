@@ -19,11 +19,10 @@ const StyledCardTech = styled.li`
     font-size: 1.5rem;
     font-weight: 600;
   }
-  #p_status{
+  #p_status {
     color: var(--color-grey1);
-    
   }
-  button{
+  button {
     width: 20%;
     background-color: var(--color-grey-2);
     border: none;

@@ -5,7 +5,6 @@ const StyledModal = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 10%;
   width: 500px;
   height: 500px;

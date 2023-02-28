@@ -14,17 +14,17 @@ const StyledHome = styled.main`
   border: none;
   border-radius: 3px;
   max-width: none;
-  .div_headerList{
+  .div_headerList {
     height: 5%;
     display: flex;
     align-items: center;
-    h2{
+    h2 {
       color: var(--color-grey-1);
       margin-left: 10%;
       margin-top: 5%;
     }
   }
-  .btn_add_tech{
+  .btn_add_tech {
     margin-top: 5%;
     margin-right: 5%;
     width: 5%;
@@ -51,7 +51,6 @@ const StyledHome = styled.main`
     border-bottom: 3px solid var(--color-grey-2);
     margin-bottom: 0px;
     border-top: 2px solid var(--color-grey-2);
-
   }
   .p_user {
     height: 30%;
@@ -108,8 +107,8 @@ const StyledHome = styled.main`
     .div_mainteance {
       display: none;
     }
-  
-    .p_user{
+
+    .p_user {
       margin: 5%;
     }
   }

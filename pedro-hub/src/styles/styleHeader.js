@@ -15,10 +15,10 @@ const StyledHeader = styled.header`
     align-items: center;
     color: var(--color-primary);
   }
-  h2:hover{
+  h2:hover {
     color: var(--color-grey-1);
   }
-  
+
   button {
     background-color: var(--color-grey-3);
     width: 10%;
@@ -36,18 +36,15 @@ const StyledHeader = styled.header`
   @media (max-width: 900px) {
     align-content: center;
     border: none;
-    button{
+    button {
       margin: 3%;
       width: 40%;
     }
-    h2{
+    h2 {
       justify-content: flex-start;
       margin: 5%;
     }
-    
   }
 `;
 
-
 export default StyledHeader;
-
