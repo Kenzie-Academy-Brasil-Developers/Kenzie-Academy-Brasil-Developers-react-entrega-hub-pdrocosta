@@ -18,7 +18,6 @@ const FormInputs = ({}) => {
     resolver: yupResolver(registerFormSchema),
   });
   const inputs = (formInput) => {
-    console.log(inputs, formInput);
     registerUser(formInput);
     navigate("/");
   };

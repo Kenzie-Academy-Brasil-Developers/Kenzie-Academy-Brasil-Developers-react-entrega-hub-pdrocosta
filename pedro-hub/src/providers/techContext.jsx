@@ -11,8 +11,6 @@ export const TechProvider = ({ children }) => {
   const [userData, setUserData] = useState([]);
 
   const openModal = () => {
-    console.log("apertado");
-    console.log(stateModal);
     setStateModal(true);
   };
 
@@ -33,7 +31,6 @@ export const TechProvider = ({ children }) => {
       setUserInfos(response.data);
       setStateModal(false);
     } catch (error) {
-      console.error("Error creating tech:", error);
       alert(error);
     }
   };
@@ -63,7 +60,6 @@ export const TechProvider = ({ children }) => {
         `/users/${localStorage.getItem(`@USERID:`)}`
       );
       setUserInfos(response.data);
-      console.log(userInfos);
     } catch (error) {
       navigate("/");
     }
@@ -83,7 +79,6 @@ export const TechProvider = ({ children }) => {
         );
         setUserInfos(response.data.user);
         setUserData(response.data.user.id);
-        console.log(userInfos, userData);
       } catch (error) {
         alert("Faca login");
         localStorage.clear();

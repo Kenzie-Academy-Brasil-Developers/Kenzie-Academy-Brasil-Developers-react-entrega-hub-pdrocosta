@@ -21,7 +21,6 @@ const TechModal = () => {
 
   const techInputs = (techformInput) => {
     createTech(techformInput);
-    console.log("botao apertado");
     reset();
   };
 
